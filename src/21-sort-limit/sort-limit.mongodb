@@ -1,0 +1,8 @@
+use("sample_training");
+
+// 1 = 0 - 10, A-Z
+// -1 = Z-A, 10 - 0
+db.zips
+  .find({ pop: { $gt: 100 }})
+  .sort({ pop: -1 })
+  .limit(2)
